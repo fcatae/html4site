@@ -1,12 +1,207 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
 <html>
 <head>
-  <!-- Use Internet Explorer 9 Standards mode -->
-  <meta http-equiv="x-ua-compatible" content="IE=5">
-  <title>My webpage</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=8">
+  <title>QUIRKS MODE</title>
 </head>
 <body>
-  <p>Content goes here 4.</p>
+    
+  <style>
+    #logo {
+      padding: 50px;
+    }
+  </style>
+  
+  <h1><img id="logo" src="quirks.png" alt="quirks logo">QUIRKS Mode</h1>
+  
+
+  <h2>Html > Body selector </h2>
+    
+  <style>
+    .htmlbody {
+      background-color: #00d0d0;
+    }
+    html > body > .htmlbody {
+      background-color: white;
+    }    
+  </style>
+  <div class="htmlbody">
+    html > body
+    </div>
+
+  <style>
+    p {
+      display: block; }
+      
+  </style>
+  
+  <h2>AttachEvent</h2>
+  <button id="p">AttachEvent</button>
+  <p>A pagina usa AttachEvent (non-standard) para associar os eventos (IE8 only). Possíveis problemas:</p> 
+  <ol>
+    <li>usar addEventListener (padrão) quebra a compatibilidade com o IE8;</li> 
+    <li>comando AttachEvent nao existe no IE11</li>
+  </ol>
+   
+  <script>
+    var p = document.getElementById('p');
+    p.attachEvent('onclick', function() {
+      alert(navigator.userAgent);    
+    });
+  </script>    
+  
+  <h2>CSS Sintaxe e Unidades</h2>
+  	<style>	
+		.clsIllegal { color: blue; color:"red"; border:"solid" }			
+		.cssSintaxe { color:"red"; border:"solid" }
+    .cssUnidade { border-width: 200; margin: 200; }
+    .cssCaseSensitive { font-size: 30px; }
+	 </style>	
+  
+<P class="cssUnidade">As medidas de width e margem nao especificam unidade (Quirks)</P>
+<P class="cssUnidade cssSintaxe">Tokens "red" e "solid" usam aspas. (IE5)</P>
+<P class="cssUnidade cssSintaxe">As medidas de width e margem nao especificam unidade (Quirks)</P>
+<P class="cssunidade csssintaxe csscasesensitive">Case insensitive (Quirks)</P>
+
+  <h2>Box Model</h2>
+  
+  <style>
+    .boxmodel { 
+      margin: 10px 100px; 
+      width: 220px; 
+      padding: 10px 100px; 
+      border: 1px solid teal; }
+  </style>
+     
+    <div class="boxmodel">
+        Comment: a div with CSS width:170px, margin:20px, padding:50px and border:6px.
+    </div> 
+
+<style type="text/css">
+.boxoverflow div        { width : 100px; height: 100px; border: thin solid red;}
+.boxoverflow blockquote { width: 125px; height: 100px;
+             margin-top: 50px; margin-left: 50px;
+             border: thin dashed black}
+.boxoverflow cite       { display: block;
+             text-align: right;
+             border: none}
+.boxoverflow p          { margin: 0;}
+</style>
+<div class="boxoverflow">
+  <div>
+    <blockquote>
+      <p>some text long enough to make it interesting.</p>
+      <cite>- anonymous</cite>
+    </blockquote>
+  </div>
+</div>
+    
+    
+   <h2>Text in Table</h2>
+   
+    <style type="text/css">
+    body { background: white; color: black; font-family: arial, sans-serif; font-size: 12px; }
+    p { font-size: 100%; }
+    
+    </style> 
+    
+   <style>
+     .textintable {
+       color: red;     
+       font-size: 40px;  
+     }
+     .textintable div { margin: 20px; width: 170px; padding: 50px; border: 6px solid green; }
+     
+     .textintable table {
+        height: 200px;          
+     }
+     
+   </style>
+   
+    <div class="textintable">
+        <table id="tba"> 
+        <tr><td>Text in a table.</td></tr> 
+        </table>
+    </div>
+        
+<h2>Bullet size</h2>
+      
+      <style>
+           ul { font-size: 40px }  
+      </style>
+      
+<ul>
+  <li>a</li>
+  <li>b</li>
+  <li>c</li>
+</ul>
+
+  <table>      
+    <tr><td>table border</td></tr>
+  </table>
+        
+        
+        <h2>ActiveX</h2>
+        
+      <script>
+        var isIE = (window.ActiveXObject != undefined);
+        if(isIE) {
+          document.write('window.ActiveXObject');
+        }        
+      </script>
+
+<h2>Centro</h2>
+
+
+  <style>    
+    .centro {
+      margin: 0 auto; /* centralizacao */
+      display: block;
+      
+      width: 200px;
+      border-style: solid;
+      display: block;      
+    }   
+    
+  </style>
+      <p class="centro">mais um teste</p>
+
+<h2>Border radius</h2>
+
+
+<style>
+  .round { border-radius : 8px; 
+    border: 1px solid black;
+  }
+</style>
+<div class="round">
+    Fora
+    <div class="round">Dentro</div>
+</div>
+
+<h2>css calc (ie9+)</h2>
+<h2>rgba notation (ie9+)</h2>
+
+  <style>
+    #table {
+      border-style: solid;
+      border-width: 4px;
+    }
+  </style>
+
+        <table class="tableborder"> 
+        <tr><td>1</td><td>2</td><td>3</td></tr> 
+        <tr><td>1</td><td>2</td><td>3</td></tr> 
+        <tr><td>1</td><td>2</td><td>3</td></tr> 
+        </table>
+        
+        <table  width="100%" border="1" cellpadding="4" cellspacing="0" bordercolor="#0e0eee">
+        <tr><td>1</td><td>2</td><td>3</td></tr> 
+        <tr><td>1</td><td>2</td><td>3</td></tr> 
+        <tr><td>1</td><td>2</td><td>3</td></tr> 
+        </table>
+        
 </body>
 </html> 
 

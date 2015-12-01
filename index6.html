@@ -45,28 +45,36 @@
 
   <h2>Box Model</h2>
   
+  <style>
+    .boxmodel { 
+      margin: 10px 100px; 
+      width: 220px; 
+      padding: 10px 100px; 
+      border: 1px solid teal; }
+  </style>
+     
+    <div class="boxmodel">
+        Comment: a div with CSS width:170px, margin:20px, padding:50px and border:6px.
+    </div> 
+    
+    
+   <h2>Text in Table</h2>
+   
     <style type="text/css">
     body { background: white; color: black; font-family: arial, sans-serif; font-size: 12px; }
     p { font-size: 100%; }
-    h1 { font-size: 16px; }
-    div { margin: 20px; width: 170px; padding: 50px; border: 6px solid teal; }
-    table { border: 1px solid teal; }
-    ul { font-size: 40px }
     
     </style> 
-    <h1>Test file for Standards/Quirks</h1> 
-    <div>
-        A div with CSS width:170px, margin:20px, padding:50px and border:6px.
-        </div> 
-    <p>Text in a p element.</p>
     
-   <h2>Text in Table</h2>
    <style>
      .textintable {
-       color: red;       
+       color: red;     
+       font-size: 40px;  
      }
+     .textintable div { margin: 20px; width: 170px; padding: 50px; border: 6px solid green; }
+     
      .textintable table {
-        height: 200px;  
+        height: 200px;          
      }
      
    </style>
@@ -78,6 +86,10 @@
     </div>
         
 <h2>Bullet size</h2>
+      
+      <style>
+           ul { font-size: 40px }  
+      </style>
       
 <ul>
   <li>a</li>
@@ -104,13 +116,11 @@
 
   <style>    
     .centro {
-      /* margin: 0 auto; centralizacao */
+      margin: 0 auto; /* centralizacao */
       display: block;
       
       border-style: solid;
-      display: block;
-      margin: 100px;
-      
+      display: block;      
     }   
     
   </style>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My webpage</title>
+  <style>
+    p {
+      /* border: 1px solid black;
+      border-radius: 5px;*/
+      border-style: solid;
+      border-width: 10 ;
+      display: block;
+      margin: 100;
+      
+    }
+    
+        centro {
+      margin: 0 auto;
+    }
+    
+  </style>
+  
+</head>
+<body>
+  <input type="image" src="image.PNG">
+  <p id="p">Content goes here 4.</p>
+  <script>
+    var p = document.getElementById('p');
+    p.attachEvent('click', function() {
+      alert('click');
+    });
+  </script>    
+  
+  	<STYLE type="text/css">	
+		.clsCompliant { color:red }
+		.clsIllegal { color: blue; color:"red"; border:"solid" }			
+	</style>	
+  
+<P class=clsIllegal>The style rules for this <B>P</B> element do not conform to the CSS1 specification because the keyword tokens "red" and "solid" are inside quotation marks. The style rules are ignored when the <SPAN class=clsBangWrap>!DOCTYPE</SPAN> declaration switches on standards-compliant mode.</P>
+
+
+    <style type="text/css">
+    body { background: white; color: black; font-family: arial, sans-serif; font-size: 12px; }
+    p { font-size: 100%; }
+    h1 { font-size: 16px; }
+    div { margin: 20px; width: 170px; padding: 50px; border: 6px solid teal; }
+    table#tba { border: 1px solid teal; }
+    ul { font-size: 40px }
+    
+    </style> 
+    <h1>Test file for Standards/Quirks</h1> 
+    <div>
+        A div with CSS width:170px, margin:20px, padding:50px and border:6px.
+        </div> 
+    <p>Text in a p element.</p>
+    <font color="red">
+    <table id="tba"> 
+        <tr><td>Text in a table.</td></tr> 
+        </table>
+        </font>
+
+<ul>
+  <li>a</li>
+  <li>b</li>
+  <li>c</li>
+</ul>
+        
+          <table>      
+    <tr><td>table border</td></tr>
+  </table>
+        
+      <script>
+        var isIE = (window.ActiveXObject != undefined);
+        if(isIE) {
+          document.write('window.ActiveXObject');
+        }        
+      </script>
+
+<p class="centro">mais um teste</p>
+
+</body>
+</html> 
+
