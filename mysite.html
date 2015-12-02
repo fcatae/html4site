@@ -5,6 +5,7 @@
 <body>
 	<style>
 		.container {
+			margin: 50px;
 		}
 		
 		.imgcontainer {
@@ -12,9 +13,8 @@
 			width: 100px;
 			height: 100px;
 			border: 1px solid black;
-			-zzzbackground-color: yellow;
 			padding: 5%;
-			margin: 50px;
+			border-width: 0 1px;						
 		}
 		
 		.counterlist {
@@ -23,7 +23,7 @@
 			right: 10px;			
 			bottom: 16px;
 			width: 200px;
-			background-color: #030;
+			background-color: #2f4f4f;
 		}
 		
 		.counter {
@@ -31,13 +31,16 @@
 			padding: 5px;
 			width: 30px;
 			height: 30px;
-			
-			text-align: center;
-			color: black; 	
 			background-color: #0c0;
 			
-			float: left;			
+			float: "left";			
 		}
+		
+		.description {
+			font-size: 24px;
+			margin: 0 10px;
+		}		
+		
 	</style>
 
 	<div class="container">
@@ -49,14 +52,55 @@
 				<div class="counter">#tags3</div>
 				<div class="counter">#tags4a</div>
 				<div class="counter">#tags5a</div>
-				<div class="counter">#tags6</div>
-				<div class="counter">#tags7a</div>
-				<div class="counter">#tags8</div>
+				<div class="counter">#tags3</div>
+				<div class="counter">#tags4a</div>
+				<div class="counter">#tags5a</div>
 			</div>
 		</div>
+		<div class="description">
+			description
+		</div>	
+		<div class="description">
+			description
+		</div>	
 	</div>
-	<div>
-		description
-	</div>		
+
+	<div class="container">
+		<div class="imgcontainer">
+			<img src="picture.jpg">
+			<div class="counterlist">		
+				<div class="counter">#tags1</div>
+				<div class="counter">#tags2a</div>
+				<div class="counter">#tags3</div>
+				<div class="counter">#tags1</div>
+				<div class="counter">#tags2a</div>
+				<div class="counter">#tags3</div>
+			</div>
+		</div>
+		<div class="description">
+			description
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="imgcontainer">
+			<img src="picture.jpg">
+			<div class="counterlist">		
+				<div class="counter">#tags1</div>
+				<div class="counter">#tags2a</div>
+				<div class="counter">#tags3</div>
+				<div class="counter">#tags4a</div>
+				<div class="counter">#tags1</div>
+				<div class="counter">#tags2a</div>
+				<div class="counter">#tags3</div>
+				<div class="counter">#tags4a</div>
+				<div class="counter">#tags1</div>
+			</div>
+		</div>
+		<div class="description">
+			description
+		</div>
+	</div>
+	
 </body>
 </html>
