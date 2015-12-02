@@ -7,13 +7,139 @@
   
   <h1><img src="modern.png" alt="html5 logo">QUIRKS Mode</h1>
   
-
+<h2>Logo (imgage) padding</h2>
+  <style>
+    #logo {
+      padding: 50px;
+    }
+  </style>
+  
+  <h2>TagSoup</h2>
+  <style>
+    #tagsoup p {
+      border: 1px solid orangered;
+    }
+  </style>
+  
+  <div id="tagsoup">
+  <p> texto + tabela
+    <table><tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr></table>
+  </div>
+  
+  <h2>Html > Body selector </h2>
+    
+  <style>
+    .htmlbody {
+      background-color: #00d0d0;
+    }
+    html > body > .htmlbody {
+      background-color: white;
+    }    
+  </style>
+  <div class="htmlbody">
+    html > body
+    </div>
 
   <style>
     p {
       display: block; }
       
   </style>
+  
+  <h2>Hover</h2>
+  <style>
+    .hoverdiv {
+      background-color: rosybrown;
+    }
+    .hoverdiv:hover {
+      background-color: red;
+    }        
+  </style>
+  <div class="hoverdiv">Passe o mouse para habilitar o hover (IE7+)</div>
+  
+  <h2>absrel Bug (fixed in IE7)</h2>
+  <style>
+    div#container1 { /***** http://positioniseverything.net/abs_relbugs.html *****/
+    position: relative;
+    border: 6px solid #090;
+    background-color: #ff8;
+    margin: 5px 7%;
+    }
+    div.upperleft, div.upperright, div.lowerleft, div.lowerright { /***** absolute boxes *****/
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    }
+    div.upperleft {
+    left: 0;
+    top: 0;
+    border: 6px solid #f00;
+    }
+    div.upperright {
+    right: 0;
+    top: 0;
+    border: 6px solid #f00;
+    }
+    div.lowerleft {
+    left: 0;
+    bottom: 0;
+    border: 6px solid #00f;
+    }
+    div.lowerright {
+    right: 0;
+    bottom: 0;
+    border: 6px solid #00f;
+    }
+  </style>
+  
+  <div id="container1">	
+
+<div class="upperleft"></div>
+
+<div class="upperright"></div>
+
+<div class="lowerleft"></div>
+
+<div class="lowerright"></div>
+
+<p class="boxtext">
+This box (".container1", green border) has been given 'position: relative', making it a
+positioned container for the
+absolute boxes. (red and blue borders) It is dimensioned horizontally by margins and
+vertically by content. It does <em>not have</em> 'width' and 'height'.
+The corner boxes are given 'position: absolute',
+and placed in the corners by using the value '0' on 'top', 'bottom', 'left', and 'right', as needed
+for each element. Example:
+</p>
+<pre >
+div.lowerleft {
+   left: 0;
+   bottom: 0;
+   border: 6px solid #00f;
+}
+</pre>
+
+</div>
+
+  
+  <h2>Expressions</h2>
+  <style>
+    #exprbg {
+      left:10px;
+      top:expression(body.scrollTop + 50 + "px");
+      height:expression(document.body.clientHeight / 4 + "px"); 
+      width:expression(document.body.clientHeight / 4 + "px");
+      background:expression( (new Date()).getSeconds()%2 ? "red" : "blue");
+    }
+  </style>
+  
+  <div id="exprbg">
+    Teste
+  </div>
   
   <h2>AttachEvent</h2>
   <button id="p">AttachEvent</button>
@@ -34,12 +160,14 @@
   	<style>	
 		.clsIllegal { color: blue; color:"red"; border:"solid" }			
 		.cssSintaxe { color:"red"; border:"solid" }
+		.clsSintaxe2 { color: ffff00 }			
     .cssUnidade { border-width: 20; margin: 20; }
     .cssCaseSensitive { font-size: 30px; }
 	 </style>	
   
 <P class="cssUnidade">As medidas de width e margem nao especificam unidade (Quirks)</P>
 <P class="cssUnidade cssSintaxe">Tokens "red" e "solid" usam aspas. (IE5)</P>
+<P class="cssUnidade cssSintaxe2">Tokens 00ff00 representando cor (sem #). (IE5)</P>
 <P class="cssUnidade cssSintaxe">As medidas de width e margem nao especificam unidade (Quirks)</P>
 <P class="cssunidade csssintaxe csscasesensitive">Case insensitive (Quirks)</P>
 
@@ -56,6 +184,25 @@
     <div class="boxmodel">
         Comment: a div with CSS width:170px, margin:20px, padding:50px and border:6px.
     </div> 
+
+<style type="text/css">
+.boxoverflow div        { width : 100px; height: 100px; border: thin solid red;}
+.boxoverflow blockquote { width: 125px; height: 100px;
+             margin-top: 50px; margin-left: 50px;
+             border: thin dashed black}
+.boxoverflow cite       { display: block;
+             text-align: right;
+             border: none}
+.boxoverflow p          { margin: 0;}
+</style>
+<div class="boxoverflow">
+  <div>
+    <blockquote>
+      <p>some text long enough to make it interesting.</p>
+      <cite>- anonymous</cite>
+    </blockquote>
+  </div>
+</div>
     
     
    <h2>Text in Table</h2>
@@ -119,6 +266,7 @@
       margin: 0 auto; /* centralizacao */
       display: block;
       
+      width: 200px;
       border-style: solid;
       display: block;      
     }   
@@ -126,6 +274,90 @@
   </style>
       <p class="centro">mais um teste</p>
 
+<h2>Border radius</h2>
+
+
+<style>
+  .round { border-radius : 8px; 
+    border: 1px solid black;
+  }
+</style>
+<div class="round">
+    Fora
+    <div class="round">Dentro</div>
+</div>
+
+<h2>css calc (ie9+)</h2>
+<h2>rgba notation (ie9+)</h2>
+
+  <style>
+    #table {
+      border-style: solid;
+      border-width: 4px;
+    }
+  </style>
+
+        <table class="tableborder"> 
+        <tr><td>1</td><td>2</td><td>3</td></tr> 
+        <tr><td>1</td><td>2</td><td>3</td></tr> 
+        <tr><td>1</td><td>2</td><td>3</td></tr> 
+        </table>
+        
+        <table  width="100%" border="1" cellpadding="4" cellspacing="0" bordercolor="#0e0eee">
+        <tr><td>1</td><td>2</td><td>3</td></tr> 
+        <tr><td>1</td><td>2</td><td>3</td></tr> 
+        <tr><td>1</td><td>2</td><td>3</td></tr> 
+        </table>
+
+<h2>Document.all</h2>
+<p>Test: <script>document.writeln(document.all ? 'true' : 'false')</script> </p>
+<p>
+<script>
+  for(i = 0; i < document.all.length; i++){
+   document.writeln(document.all(i).tagName);
+}
+</script>
+</p>
+
+<h2>CSS Calc</h2>
+<style>
+  #formbox input {
+  padding: 2px;
+  display: block;
+  width: 30%;               /* fallback for browsers without support for calc() */
+  width: calc(100% - 1em);
+}
+#formbox {
+  width: 430px;             /* fallback for browsers without support for calc() */
+  width: calc(100% / 6);
+  border: 1px solid black;
+  padding: 4px;
+}
+</style>
+
+<form>
+  <div id="formbox">
+      <label>Type something:</label>
+      <input type="text">
+  </div>
+</form>
+       
+<h2>RGBA</h2>
+<style>
+  .rgba {
+    background-color: rgb(255,0,0);
+    background-color: rgba(255,0,0,0.5);
+  }
+  .rgba-ie6 { background-color: #fff; }
+  .rgba-ie8 { background-color: #f00; }
+  .rgba-ie9 { background-color: #f77 }
+  
+</style>
+<div class="rgba">Multiplos casos:</div>
+<p class="rgba-ie6">IE5/6/7 deveria se comportar diferente... https://css-tricks.com/examples/IERGBBug/</p>
+<p class="rgba-ie8">IE8 (fallback)</p>
+<p class="rgba-ie9">IE9+</p>
+        
 </body>
 </html> 
 
